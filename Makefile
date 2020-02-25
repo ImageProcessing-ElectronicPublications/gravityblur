@@ -1,12 +1,13 @@
 
 APPNAME ?= gravblur
-SRCNAME ?= main.c
+SRCS    = src
+SRCNAME ?= $(SRCS)/main.c
 
-$(APPNAME): bitmap.h gravityblur.h pngio.h jpegio.h
+$(APPNAME): $(SRCS)/bitmap.h $(SRCS)/gravityblur.h $(SRCS)/pngio.h $(SRCS)/jpegio.h
 
 MFLAGS := -march=native
 CFLAGS := -Wall -Wextra -pedantic -O3 $(MFLAGS)
-LIBS := -ljpeg -lpng
+LIBS := -ljpeg -lpng -lm
 
 .PHONY: clean all
 
@@ -16,5 +17,5 @@ clean:
 	rm -f $(APPNAME)
 
 $(APPNAME): $(SRCNAME)
-	$(CC) -DAPPNAME=$(APPNAME) $(CFLAGS) -s -o $@ $< $(LIBS) -lm
+	$(CC) -DAPPNAME=$(APPNAME) $(CFLAGS) -s -o $@ $< $(LIBS)
 

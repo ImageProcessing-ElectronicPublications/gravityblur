@@ -19,13 +19,13 @@ Images are processed locally on your computer.
 
 ## Options
 
-`-r, --range f` Gravity range (0-100)  
-`-s, --sharp f` Sharpness (0-100)  
+`-r, --range f` Gravity range (0.0-20.0)  
+`-s, --sharp f` Sharpness (0.0-2.0)  
 `-n, --niter n` Number of iterations (default is 3)  
-`-R, --rgb` Process in RGB (default)  
-`-Y, --yuv` Process in YUV  
+`-c, --colorspace s` Process in s={RGB,YUV} colorspace  
 `-S, --separate` Separate color components  
 `-a, --alpha` Use alpha channel  
+`-x, --ris` Use RIS shema  
 `-i, --info n` Print gravblur debug output: 0 - silent, 3 - all (default)  
 
 ## Examples
